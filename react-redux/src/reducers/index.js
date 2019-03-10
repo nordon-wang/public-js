@@ -1,23 +1,29 @@
 import chat from './chat'
-import msg from './msg'
+import changeMsg from './msg'
 import username from './username'
 import age from './age'
+import { combineReducers } from 'redux'
 
-export default function (state = {}, action = {}){
-  console.log('action',state,action)
-  return {
-    msg: msg(state.msg, action),
-    chat: chat(state.chat, action),
-    age: age(state.age, action),
-    username: username(state.username, action),
-  }
-}
+export default combineReducers({
+  msg:changeMsg,
+  chat,
+  age,
+  username
+})
+
+// export default function (state = {}, action = {}){
+//   console.log('action',state,action)
+//   return {
+//     msg: msg(state.msg, action),
+//     chat: chat(state.chat, action),
+//     age: age(state.age, action),
+//     username: username(state.username, action),
+//   }
+// }
 
 
 // function Reducer(state = {}, action ={}){
-
 //   const {type, payload} = action
-
 //   switch(type){
 //     case 'CHAT':
 //       return Object.assign({}, state, {
@@ -34,5 +40,4 @@ export default function (state = {}, action = {}){
 //     default:
 //       return state
 //   }
-
 // }
