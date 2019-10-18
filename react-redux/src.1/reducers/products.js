@@ -14,6 +14,8 @@ const all = (state = initialState.all, action ) => {
     case types.ADD_TO_CART:
       const productId = action.product.id
       const product = state.find(item => item.id === productId)
+      console.log('products ---')
+
       product.inventory--
       return [...state]
     default:

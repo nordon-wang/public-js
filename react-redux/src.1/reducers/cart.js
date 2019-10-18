@@ -16,6 +16,7 @@ const items = (state = initialState.items, action) => {
       // 判断购物车中 是否已存在
       const productId = action.product.id
       const product =  state.find(item => item.id === productId)
+      console.log('cart ---')
 
       // 存在 数量+1
       if(product){
